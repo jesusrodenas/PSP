@@ -18,6 +18,7 @@ public class PlanificadorFCFS {
         queue = new LinkedList<Proceso>();
     }
     
+    // Método que toma un proceso del conjunto de procesos a servir.
     public static Proceso get(){
     	Proceso aux = queue.poll();
         long inicio, fin;
