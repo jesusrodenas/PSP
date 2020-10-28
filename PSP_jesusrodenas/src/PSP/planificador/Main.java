@@ -22,6 +22,7 @@ public class Main {
        preparaMicroprocesador();
        PlanificadorFCFS.sirve();
        */
+    	//Cambio 
     	preparaMicroprocesadorSTF();
         PlanificadorSTF.sirve();
     } 
