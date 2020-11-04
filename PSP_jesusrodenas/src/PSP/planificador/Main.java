@@ -8,6 +8,7 @@ package PSP.planificador;
 import java.util.ArrayList;
 
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -47,5 +48,11 @@ public class Main {
 			Proceso pi = new Proceso( "p" + i, ((int) Math.floor(Math.random()*4+1)) * 1000 );
 			PlanificadorSTF.put(pi);
 		}
+		
+		Collections.sort(PlanificadorSTF.procesos, new Comparator<Proceso>() {
+			@Override
+			public int compare(Proceso p1, Proceso p2) {
+				return p1.duracion - p2.duracion;
+			} });
 	}
 }

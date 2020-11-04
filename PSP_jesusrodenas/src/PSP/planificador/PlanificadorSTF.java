@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class PlanificadorSTF {
-	private static List<Proceso> procesos;
+	public static List<Proceso> procesos;
 	
 	static {
 		procesos = new ArrayList<Proceso>();
@@ -37,11 +37,6 @@ public class PlanificadorSTF {
 	}
 	
 	public static void sirve() {
-		Collections.sort(procesos, new Comparator<Proceso>() {
-			@Override
-			public int compare(Proceso p1, Proceso p2) {
-				return p1.duracion - p2.duracion;
-			} });
 		
 		while (procesos.size()>0) {
 			get();
