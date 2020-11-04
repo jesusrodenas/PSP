@@ -1,4 +1,4 @@
-package PSP.repasoficheros.caracteresbuf;
+package PSP.flujos.entrada.caracteres.buffered;
 
 import java.io.BufferedWriter;
 

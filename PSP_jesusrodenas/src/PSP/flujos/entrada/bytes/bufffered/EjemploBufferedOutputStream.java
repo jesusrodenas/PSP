@@ -1,4 +1,4 @@
-package PSP.repasoficheros.bytes.buf;
+package PSP.flujos.entrada.bytes.bufffered;
 
 import java.io.BufferedOutputStream;
 

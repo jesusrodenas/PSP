@@ -1,4 +1,4 @@
-package PSP.repasoficheros.caracteresfile;
+package PSP.flujos.entrada.caracteres.file;
 
 import java.io.FileWriter;
 import java.io.IOException;

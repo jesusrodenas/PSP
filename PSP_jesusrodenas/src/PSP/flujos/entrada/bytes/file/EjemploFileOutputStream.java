@@ -1,4 +1,4 @@
-package PSP.repasoficheros.bytes.file;
+package PSP.flujos.entrada.bytes.file;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
