@@ -1,4 +1,4 @@
-package PSP.flujos.entrada.caracteres.file;
+package PSP.flujos.salida.caracteres.file;
 
 import java.io.FileWriter;
 import java.io.IOException;

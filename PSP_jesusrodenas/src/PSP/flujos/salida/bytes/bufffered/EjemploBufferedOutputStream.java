@@ -1,7 +1,9 @@
-package PSP.flujos.entrada.bytes.array;
+package PSP.flujos.salida.bytes.bufffered;
 
-import java.io.ByteArrayOutputStream;
+import java.io.BufferedOutputStream;
+
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -9,31 +11,33 @@ import java.util.Arrays;
  * @author JESUS
  *
  */
-public class EjemploByteArrayOutputStream {
+public class EjemploBufferedOutputStream {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		byte[] buffer = new byte[1024*32]; 
 		Arrays.fill(buffer, Byte.parseByte("1"));
-		ByteArrayOutputStream baos = null;
+		BufferedOutputStream bos = null;
 		try {
-			baos = new ByteArrayOutputStream();
-			baos.write(buffer);
-			System.out.println(baos.toByteArray().length);			
+			bos = new BufferedOutputStream(new FileOutputStream("ejemplo_buffered.dat"));
+			bos.write(buffer);
 		} catch (FileNotFoundException e) {			
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			if (baos != null)
+			if (bos != null)
 				try {
-					baos.close();
+					bos.close();
 				} catch (IOException e) {					
 					e.printStackTrace();
 				}
 		}
+		
+		
 
 	}
 
