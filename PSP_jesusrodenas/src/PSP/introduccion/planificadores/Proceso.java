@@ -1,4 +1,4 @@
-package PSP.planificador;
+package PSP.introduccion.planificadores;
 
 
 public class Proceso{
