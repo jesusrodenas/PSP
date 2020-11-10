@@ -1,4 +1,4 @@
-package PSP.flujos.entrada.caracteres;
+package PSP.UD00.flujos.entrada.caracteres;
 
 public abstract class Codificador {
 	private static final int DESPLAZAMIENTO_CESAR = 3;

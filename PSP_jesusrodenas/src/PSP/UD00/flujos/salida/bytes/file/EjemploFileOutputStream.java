@@ -1,33 +1,36 @@
-package PSP.flujos.entrada.bytes.file;
+package PSP.UD00.flujos.salida.bytes.file;
 
-
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * @author JESUS
  *
  */
-public class EjemploFileInputStream {
+public class EjemploFileOutputStream {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
-		FileInputStream fIn = null;
+		OutputStream fOut = null;
 		
 		try {
-			fIn = new FileInputStream("PSP_2DAM.dat");
-			int c;
-			while ((c = fIn.read()) != -1) 
-				System.out.println(c);
+			fOut = new FileOutputStream("PSP_2DAM.dat");
+			for(int i = 0; i < 100; i++) {
+				fOut.write(i);
+			}			
 		} catch (FileNotFoundException e) {			
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			if (fIn != null)
+			if (fOut != null)
 				try {
-					fIn.close();
+					fOut.close();
 				} catch (IOException e) {					
 					e.printStackTrace();
 				}

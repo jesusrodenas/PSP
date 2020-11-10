@@ -1,3 +1,3 @@
 module PSP_jesusrodenas {
-	exports PSP.introduccion.planificadores;
+	exports PSP.UD00.introduccion.planificadores;
 }

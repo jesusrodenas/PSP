@@ -1,4 +1,4 @@
-package PSP.flujos.entrada.bytes.buffered;
+package PSP.UD00.flujos.entrada.bytes.buffered;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

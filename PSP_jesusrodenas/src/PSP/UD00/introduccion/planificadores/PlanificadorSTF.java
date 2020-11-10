@@ -1,4 +1,4 @@
-package PSP.introduccion.planificadores;
+package PSP.UD00.introduccion.planificadores;
 
 import java.util.ArrayList;
 import java.util.Collections;
