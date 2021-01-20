@@ -19,6 +19,16 @@ public class HiloSincronizacion {
 		HiloB b = new HiloB("HiloB", cont);
 		a.start();
 		b.start();
+		
+		try {
+			a.join();
+			b.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		System.out.println("Al final: " + cont.getValor());
 	}
 
 
