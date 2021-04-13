@@ -1,17 +1,31 @@
 package PSP.UD00.introduccion.planificadores;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
+/**
+ * La clase PlanificadorSTF tiene dos funciones principales:
+ * 	- Hace las veces de clase envoltorio, gestionará la cola de preparados.
+ * 	- A través del método sirve, se ejecutan todos los procesos de la cola hasta finalizarla en orden STF.
+ * A través de su método get, ofrecerá al microprocesador el procesos candidatos a ser ejecutado de su cola.
+ * Al tratarse de un STF, el proceso candidato será el de menor tiempo total de ejecución.
+ * 
+ * @author JESUS
+ */
 public class PlanificadorSTF {
+	/**
+	 * Colección que almacena la cola de preparados.
+	 */
 	public static List<Proceso> procesos;
 	
 	static {
 		procesos = new ArrayList<Proceso>();
 	}
 
+    /**
+     * 
+     * @return Proceso candidato a ser ejecutado: Al tratarse de un STF, el proceso candidato será el de menor tiempo total de ejecución.
+     */
 	public static Proceso get() {
 		long inicio, fin;
 		Proceso p = null;
@@ -32,16 +46,26 @@ public class PlanificadorSTF {
 		return p;
 	}
 	
+    /**
+     * 
+     * @param pi Proceso a insertar en la cola de preparados. Al tratarse de un cola se hará en último lugar.
+     */
 	public static void put(Proceso p) {
 		procesos.add(p);
 	}
 	
+    /**
+     * Obtiene todo los procesos uno a uno hasta finlizar la cola. Es decir, llama al método get tantas veces como procesos 
+     * hay en la cola de preparados.
+     * Como se eliminan de la cola de preparados a medida que se sirven, controlamos la finalización del bucle con el tamaño del 
+     * conjunto de procesos preparados.
+     */
 	public static void sirve() {
 		
 		while (procesos.size()>0) {
 			get();
 		}
 		
-		System.out.println("Planificación sin procesos.");
+		System.out.println("Planificador sin procesos.");
 	}
 }

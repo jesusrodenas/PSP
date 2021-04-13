@@ -15,19 +15,24 @@ import java.util.Comparator;
  * @author JESUS
  */
 public class Main {   
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       /*
-       preparaMicroprocesador();
-       PlanificadorFCFS.sirve();
-       */
-    	//Cambio 
+	/**
+	 * Este main llamará a los métoso del Planificador FCFS o del planificador STF en función lo que se desee.
+	 * Para ello se comentan las líneas que no se quieran ejecutar.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		preparaMicroprocesadorFCFS();
+		PlanificadorFCFS.sirve();
+		
     	preparaMicroprocesadorSTF();
-        PlanificadorSTF.sirve();
+        PlanificadorSTF.sirve();    	
     } 
     
+	/**
+	 * Prepara el microprocesador para la ejecución del algoritmo FCFS.
+	 * Inserta 5 procesos de duración aleatoria y los desordena. Seguidamente los inserta en la cola de preparados.
+	 */
     public static void preparaMicroprocesadorFCFS(){
         ArrayList<Proceso> procesos = new ArrayList<Proceso>();
         
@@ -43,6 +48,10 @@ public class Main {
         } 
     }
     
+    /**
+     * Prepara el microprocesador para la ejecución del algoritmo STF.
+     * Inserta 5 procesos de duración aleatoria y lo ordena en función de la duración de su ejecución.
+     */
     private static void preparaMicroprocesadorSTF () {
 		for (int i = 1; i <= 5; i++) {
 			Proceso pi = new Proceso( "p" + i, ((int) Math.floor(Math.random()*4+1)) * 1000 );
